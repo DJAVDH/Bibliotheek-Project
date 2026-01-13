@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ genre }} - Bibliotheek{% endblock %}
+
+{% block content %}
+    <h1>{{ genre }}</h1>
+    <p>Books in this genre will appear here later.</p>
+    <a href="{{ path('homepage') }}" class="btn btn-secondary">Back to homepage</a>
+{% endblock %}

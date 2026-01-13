@@ -5,6 +5,16 @@
 {% block content %}
     <h1>Welkom bij de Bibliotheek</h1>
     <p>Ontdek onze collectie boeken, tijdschriften en meer!</p>
+
+<h1>Library Genres</h1>
+<div class="genres">
+    {% for genre in genres %}
+        <a href="{{ path('genre_page', { name: genre|lower }) }}" class="btn btn-primary">
+            {{ genre }}
+        </a>
+    {% endfor %}
+</div>
+
 {% endblock %}
 
 {% block footer %}

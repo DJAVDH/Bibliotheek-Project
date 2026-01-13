@@ -1,4 +1,0 @@
-- [x] Update base.html.twig to include a content block
-- [x] Modify home.html.twig to extend base.html.twig and define title and content blocks
-- [x] Fix baseController.php route to '/' for the homepage
-- [ ] Run the Symfony server to test the routes and view rendering
