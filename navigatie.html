@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plattegrond Forum Zoetermeer</title>
+    <link rel="stylesheet" href="css/navigatie.css">
+</head>
+<body>
+
+<div class="blueprint-container">
+    <div class="header">
+        <h2>Bibliotheek Forum Zoetermeer</h2>
+        <p>Plattegrond & Indeling</p>
+    </div>
+
+    <div class="floor-nav">
+        <button class="floor-btn active" onclick="switchFloor(0)">Begane Grond (Entree)</button>
+        <button class="floor-btn" onclick="switchFloor(1)">1e Verdieping (Studie)</button>
+        <button class="floor-btn" onclick="switchFloor(2)">2e Verdieping (Collectie)</button>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="map-frame">
+            <canvas id="blueprintCanvas" width="850" height="550"></canvas>
+        </div>
+
+        <div class="legend-panel">
+            <h3>Legenda Objecten</h3>
+            <ul class="legend-list">
+                <li>
+                    <span class="legend-icon shelf-icon">A1</span>
+                    <span>Boekenkast</span>
+                </li>
+                <li>
+                    <span class="legend-icon desk-icon"></span>
+                    <span>Service Balie / Info</span>
+                </li>
+                <li>
+                    <span class="legend-icon core-icon">LIFT</span>
+                    <span>Facilitair (Lift/Trap/WC)</span>
+                </li>
+                <li>
+                    <span class="legend-icon furniture-icon"></span>
+                    <span>Studie- / Leesplekken</span>
+                </li>
+            </ul>
+            <div class="legend-footer">
+                <p><strong>Info:</strong> De kasten zijn genummerd (bijv. A1, B5). Gebruik de bordjes in de bieb om de juiste rij te vinden.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="java/navigatie.js"></script>
+
+</body>
+</html>
