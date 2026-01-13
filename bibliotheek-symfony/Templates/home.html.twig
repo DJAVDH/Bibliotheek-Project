@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% block title %}Bibliotheek Homepage{% endblock %}</title>
-</head>
+{% extends 'base.html.twig' %}
 
-<body>
+{% block title %}Bibliotheek Homepage{% endblock %}
+
+{% block content %}
     <h1>Welkom bij de Bibliotheek</h1>
     <p>Ontdek onze collectie boeken, tijdschriften en meer!</p>
-</body>
+{% endblock %}
 
-<footer>
-
-</footer>
-</html>
+{% block footer %}
+    <p>&copy; 2023 Bibliotheek</p>
+{% endblock %}
