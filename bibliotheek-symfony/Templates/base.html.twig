@@ -5,13 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block title %}Bibliotheek{% endblock %}</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/script.js"></script>
 </head>
 <body>
-<btn> Log in </btn>
+{% block login %}
+<btn class="login-btn"> Log in </btn>
 <input type="text" placeholder="Search..." />
-    {% block content %}{% endblock %}
-    <footer>
-        {% block footer %}{% endblock %}
-    </footer>
+{% endblock %}
+
+{% block register %}
+<button class="register-btn">Gratis account aanmaken</button>
+
+<form class="register-form">
+    <input type="text" placeholder="Naam" />
+    <input type="email" placeholder="E-mail" />
+    <input type="password" placeholder="Wachtwoord" />
+    <button type="submit">Registreren</button>
+</form>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+<footer>
+    {% block footer %}
+    {% endblock %}
+</footer>
 </body>
 </html>

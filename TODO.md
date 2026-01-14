@@ -1,6 +1,7 @@
-# TODO List for Navigation Button and Home Display Fix
+# TODO: Convert Inline Login/Register to Pop-up Modal
 
-- [ ] Add route in LibraryController.php for /navigatie rendering navigatie.html.twig
-- [ ] Modify homeController.php to pass genres array to home.html.twig
-- [ ] Add navigation button in home.html.twig linking to /navigatie route
-- [ ] Test the navigation button and verify genres display on /home
+- [x] Update `bibliotheek-symfony/Templates/home.html.twig` to remove inline forms and add modal overlay with two halves (form and info)
+- [x] Update `bibliotheek-symfony/public/js/script.js` to handle modal show/hide and form population
+- [x] Update `bibliotheek-symfony/public/css/style.css` to style the modal as full-screen overlay with two columns
+- [ ] Test the modal functionality by clicking buttons and verifying display
+- [ ] Verify responsiveness on different screen sizes

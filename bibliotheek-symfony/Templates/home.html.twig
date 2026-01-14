@@ -8,7 +8,7 @@
 
     <a href="{{ path('navigatie') }}" class="navigatie-btn">
         <div class="navigatie-text">Navigatie</div>
-        <div class="navigatie-icon">🗺️</div>
+        <div class="navigatie-icon">↑</div>
     </a>
 
 <h1>Library Genres</h1>
@@ -20,6 +20,36 @@
     {% endfor %}
 </div>
 
+<!-- Modal for Login/Register -->
+<div id="auth-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-form">
+            <div id="modal-form-content">
+                <!-- Form will be populated by JS -->
+            </div>
+        </div>
+        <div class="modal-info">
+            <h2>Welkom bij de Bibliotheek</h2>
+            <p>Ontdek een wereld van kennis en verhalen. Meld je aan om toegang te krijgen tot onze uitgebreide collectie boeken, tijdschriften en digitale middelen.</p>
+            <ul>
+                <li>Gratis toegang tot duizenden boeken</li>
+                <li>Reserveer boeken online</li>
+                <li>Ontvang aanbevelingen op basis van je interesses</li>
+            </ul>
+        </div>
+        <button class="modal-close">&times;</button>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block login %}
+<btn class="login-btn"> Log in </btn>
+<input type="text" placeholder="Search..." />
+{% endblock %}
+
+{% block register %}
+<button class="register-btn">Gratis account aanmaken</button>
 {% endblock %}
 
 {% block footer %}
