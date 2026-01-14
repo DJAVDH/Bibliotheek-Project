@@ -3,21 +3,62 @@
 {% block title %}Bibliotheek Homepage{% endblock %}
 
 {% block content %}
-    <h1>Welkom bij de Bibliotheek</h1>
-    <p>Ontdek je volgende favoriete boek!</p>
+<div class="box box1">
+    <div class="box-content">
+        <div class="text-section">
+            <h1>Welkom bij de Bibliotheek</h1>
+            <p>Ontdek je volgende favoriete boek!</p>
+        </div>
+        <div class="image-section">
+            <img src="/images/ido_campagnebeeld.jpg.rendition.1280.2048.jpeg" alt="IDO Campagnebeeld">
+        </div>
+    </div>
+</div>
 
-    <a href="{{ path('navigatie') }}" class="navigatie-btn">
-        <div class="navigatie-text">Navigatie</div>
-        <div class="navigatie-icon">↑</div>
-    </a>
+<div class="box box2">
+    <div class="box-content">
+        <div class="suggestions-section">
+            <button class="btn">Suggestie 1</button>
+            <button class="btn">Suggestie 2</button>
+        </div>
+        <div class="navigatie-section">
+            <a href="{{ path('navigatie') }}" class="navigatie-btn">
+                <div class="navigatie-text">Navigatie</div>
+                <div class="navigatie-icon">↑</div>
+            </a>
+        </div>
+    </div>
+</div>
 
-<h1>Library Genres</h1>
-<div class="genres">
-    {% for genre in genres %}
-        <a href="{{ path('genre_page', { name: genre|lower }) }}" class="btn btn-primary">
-            {{ genre }}
-        </a>
-    {% endfor %}
+<div class="box box3">
+    <h2>Meest populaire boeken</h2>
+    <ul>
+        <li>Boek 1</li>
+        <li>Boek 2</li>
+        <li>Boek 3</li>
+    </ul>
+</div>
+
+<div class="box box4">
+    <h2>Genres</h2>
+    <div class="genres">
+        {% for genre in genres %}
+            <a href="{{ path('genre_page', { name: genre|lower }) }}" class="btn btn-primary">
+                {{ genre }}
+            </a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="box box5">
+    <h2>Evenementen</h2>
+    <p>Komende evenementen...</p>
+</div>
+
+<div class="box box6">
+    {% block register %}
+    <button class="register-btn">Gratis account aanmaken</button>
+    {% endblock %}
 </div>
 
 <!-- Modal for Login/Register -->
@@ -44,12 +85,17 @@
 {% endblock %}
 
 {% block login %}
-<btn class="login-btn"> Log in </btn>
-<input type="text" placeholder="Search..." />
-{% endblock %}
-
-{% block register %}
-<button class="register-btn">Gratis account aanmaken</button>
+<header class="main-header">
+    <div class="logo">
+        <img src="/images/zoetermeer-logo.png" alt="Zoetermeer Logo">
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-bar" />
+    </div>
+    <div class="login-container">
+        <button class="login-btn">Log in</button>
+    </div>
+</header>
 {% endblock %}
 
 {% block footer %}

@@ -1,7 +1,9 @@
-# TODO: Convert Inline Login/Register to Pop-up Modal
+# TODO for Setting Up 6 Boxes/Categories on Website
 
-- [x] Update `bibliotheek-symfony/Templates/home.html.twig` to remove inline forms and add modal overlay with two halves (form and info)
-- [x] Update `bibliotheek-symfony/public/js/script.js` to handle modal show/hide and form population
-- [x] Update `bibliotheek-symfony/public/css/style.css` to style the modal as full-screen overlay with two columns
-- [ ] Test the modal functionality by clicking buttons and verifying display
-- [ ] Verify responsiveness on different screen sizes
+## Tasks
+- [x] Modify home.html.twig to structure content into 6 boxes
+- [x] Add CSS styles in style.css for box layouts and backgrounds
+- [x] Style top box with orange background, text left, image right
+- [x] Style third and fifth boxes with light grey background
+- [x] Style sixth box with orange background
+- [x] Test layout and responsiveness

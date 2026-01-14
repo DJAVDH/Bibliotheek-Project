@@ -6,6 +6,9 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -41,9 +44,72 @@ footer {
     padding: 20px;
     background-color: #333;
     color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    margin-top: auto;
+}
+
+/* Box Styles */
+.box {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.box1 {
+    background-color: #ff8c00; /* Orange background */
+    color: white;
+}
+
+.box1 .box-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box1 .text-section {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.box1 .image-section {
+    flex: 1;
+    text-align: right;
+}
+
+.box1 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.box2 .box-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box2 .suggestions-section {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.box2 .navigatie-section {
+    flex: 1;
+    text-align: right;
+}
+
+.box3 {
+    background-color: #f0f0f0; /* Light grey background */
+}
+
+.box5 {
+    background-color: #f0f0f0; /* Light grey background */
+}
+
+.box6 {
+    background-color: #ff8c00; /* Orange background */
+    text-align: center;
 }
 
 .navigatie-btn {
@@ -115,6 +181,49 @@ footer {
     background-color: #0056b3;
 }
 
+/* Header Styles */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    flex: 1;
+    /* Space for logo, can add img or text here */
+}
+
+.search-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    width: 60%; /* Longer search bar */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar:focus {
+    border-color: #007bff;
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .login-btn {
     background-color: #007bff;
     color: white;
@@ -122,7 +231,6 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 10px;
     transition: background-color 0.3s;
 }
 
