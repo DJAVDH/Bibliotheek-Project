@@ -11,6 +11,9 @@ class homeController extends AbstractController
     #[Route('/home', name: 'home')]
     public function index(): Response
     {
-        return $this->render('home.html.twig');
+        $genres = ['Fiction', 'Non-Fiction', 'Science', 'History'];
+        return $this->render('home.html.twig', [
+            'genres' => $genres,
+        ]);
     }
 }

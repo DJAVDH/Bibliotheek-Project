@@ -23,4 +23,10 @@ class LibraryController extends AbstractController
             'genre' => ucfirst($name),
         ]);
     }
+
+    #[Route('/navigatie', name: 'navigatie')]
+    public function navigatie(): Response
+    {
+        return $this->render('navigatie.html.twig');
+    }
 }
