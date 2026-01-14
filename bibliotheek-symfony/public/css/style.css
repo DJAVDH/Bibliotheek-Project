@@ -304,3 +304,15 @@ footer {
 .modal-close:hover {
     color: #007bff;
 }
+
+
+#textsection,p{
+    text-align: center;
+    font-size: large;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#textsection,h1{
+    font-family: "Times New Roman", Times, serif;
+    font-size: xx-large;
+}
