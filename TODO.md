@@ -1,9 +1,11 @@
-# TODO for Setting Up 6 Boxes/Categories on Website
+# TODO for Task: Add Search Icon Inside Search Bar and Style Login Button
 
-## Tasks
-- [x] Modify home.html.twig to structure content into 6 boxes
-- [x] Add CSS styles in style.css for box layouts and backgrounds
-- [x] Style top box with orange background, text left, image right
-- [x] Style third and fifth boxes with light grey background
-- [x] Style sixth box with orange background
-- [x] Test layout and responsiveness
+## Steps to Complete:
+1. Update bibliotheek-symfony/public/css/style.css to add search icon inside the search bar using CSS ::before pseudo-element on .search-bar.
+2. Update bibliotheek-symfony/public/css/style.css to style .login-btn to match .Zoekboek-btn (gradient background, rounded corners, etc.).
+3. Verify changes by running the application and checking the header visually.
+
+## Progress:
+- [x] Step 1: Add search icon CSS
+- [x] Step 2: Style login-btn
+- [ ] Step 3: Verify changes

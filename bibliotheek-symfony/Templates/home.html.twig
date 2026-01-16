@@ -6,8 +6,11 @@
 <div class="box box1">
     <div class="box-content">
         <div class="text-section">
-            <h1>Welkom bij de Bibliotheek</h1>
-            <p>Ontdek je volgende favoriete boek!</p>
+            <h1>Ontdek je volgende favoriete boek</h1>
+            <p>Vind, leen en recenseer duizenden boeken. Laat je inspireren door <br>
+            recencies van andere lezers</p>
+
+            <button class="Zoekboek-btn"> Begin met zoeken</button>
         </div>
         <div class="image-section">
             <img src="/images/ido_campagnebeeld.jpg.rendition.1280.2048.jpeg" alt="IDO Campagnebeeld">
@@ -17,15 +20,24 @@
 
 <div class="box box2">
     <div class="box-content">
+        
         <div class="suggestions-section">
-            <button class="btn">Suggestie 1</button>
-            <button class="btn">Suggestie 2</button>
+        <h1> Niet zeker wat te lezen? </h1>
+        <p> Beantwoord een paar vragen en krijg persoonlijke boekaanbevelingen </p>
+            <div class="icon-row">
+                <button class="suggestions-icon">💡</button>
+                <button class="AiI-icon">🤖</button>
+                <button class="ontdek-icon">📚</button>
+            </div>
         </div>
+
         <div class="navigatie-section">
-            <a href="{{ path('navigatie') }}" class="navigatie-btn">
-                <div class="navigatie-text">Navigatie</div>
-                <div class="navigatie-icon">↑</div>
-            </a>
+        <h1> Zoek je boek </h1>
+        <p> Vind nu je boek via onze navigatie tool </p>
+            <div class="icon-row">
+                <button class="navigatie-icon">↑</button>
+                <button class="ontdek-icon">📖</button>
+            </div>
         </div>
     </div>
 </div>
@@ -51,8 +63,9 @@
 </div>
 
 <div class="box box5">
-    <h2>Evenementen</h2>
-    <p>Komende evenementen...</p>
+    <h2>Bookfinder</h2>
+    <p>Alles wat je nodig hebt voor je leeservaring</p>
+
 </div>
 
 <div class="box box6">
@@ -90,7 +103,7 @@
         <img src="/images/zoetermeer-logo.png" alt="Zoetermeer Logo">
     </div>
     <div class="search-container">
-        <input type="text" placeholder="Search..." class="search-bar" />
+        <input type="text" placeholder="🔍 Search..." class="search-bar" />
     </div>
     <div class="login-container">
         <button class="login-btn">Log in</button>
@@ -99,5 +112,13 @@
 {% endblock %}
 
 {% block footer %}
+<div class="footer-content">
     <p>&copy; Bugging Out Project Groepje</p>
+    <div class="social-icons">
+        <img src="/images/smi-facebook.png.rendition.120.192.png" alt="Facebook">
+        <img src="/images/smi-instagram.png.rendition.120.192.png" alt="Instagram">
+        <img src="/images/smi-linkedin.png.rendition.120.192.png" alt="LinkedIn">
+        <img src="/images/smi-newsletter.png.rendition.120.192.png" alt="Newsletter">
+    </div>
+</div>
 {% endblock %}
