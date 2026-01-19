@@ -35,7 +35,7 @@
         <h1> Zoek je boek </h1>
         <p> Vind nu je boek via onze navigatie tool </p>
             <div class="icon-row">
-                <button class="navigatie-icon">↑</button>
+                <a href="{{ path('navigatie') }}" class="navigatie-icon">↑</a>
                 <button class="ontdek-icon">📖</button>
             </div>
         </div>
@@ -44,21 +44,80 @@
 
 <div class="box box3">
     <h2>Meest populaire boeken</h2>
-    <ul>
-        <li>Boek 1</li>
-        <li>Boek 2</li>
-        <li>Boek 3</li>
-    </ul>
+    <div class="books-container">
+        <div class="book-item">
+            <img src="/images/placeholder-book.jpg" alt="Boek 1" class="book-cover">
+            <h4>Boek Titel 1</h4>
+            <p class="book-author">Auteur Naam</p>
+            <div class="book-info">
+                <div class="book-rating">⭐⭐⭐⭐⭐ (4.5)</div>
+                <span class="book-availability">Beschikbaar</span>
+            </div>
+        </div>
+        <div class="book-item">
+            <img src="/images/placeholder-book.jpg" alt="Boek 2" class="book-cover">
+            <h4>Boek Titel 2</h4>
+            <p class="book-author">Auteur Naam</p>
+            <div class="book-info">
+                <div class="book-rating">⭐⭐⭐⭐ (4.0)</div>
+                <span class="book-availability">Beschikbaar</span>
+            </div>
+        </div>
+        <div class="book-item">
+            <img src="/images/placeholder-book.jpg" alt="Boek 3" class="book-cover">
+            <h4>Boek Titel 3</h4>
+            <p class="book-author">Auteur Naam</p>
+            <div class="book-info">
+                <div class="book-rating">⭐⭐⭐⭐⭐ (4.8)</div>
+                <span class="book-availability">Beschikbaar</span>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="box box4">
     <h2>Genres</h2>
     <div class="genres">
-        {% for genre in genres %}
-            <a href="{{ path('genre_page', { name: genre|lower }) }}" class="btn btn-primary">
-                {{ genre }}
-            </a>
-        {% endfor %}
+        <a href="{{ path('genre_page', { name: 'fantasy'|lower }) }}" class="genre-btn genre-fantasy">
+            <div class="genre-icon">🐉</div>
+            <div class="genre-name">Fantasy</div>
+            <div class="genre-count">234 boeken</div>
+        </a>
+        <a href="{{ path('genre_page', { name: 'thriller'|lower }) }}" class="genre-btn genre-thriller">
+            <div class="genre-icon">🔪</div>
+            <div class="genre-name">Thriller</div>
+            <div class="genre-count">189 boeken</div>
+        </a>
+        <a href="{{ path('genre_page', { name: 'romance'|lower }) }}" class="genre-btn genre-romance">
+            <div class="genre-icon">💕</div>
+            <div class="genre-name">Romance</div>
+            <div class="genre-count">312 boeken</div>
+        </a>
+        <a href="{{ path('genre_page', { name: 'science fiction'|lower }) }}" class="genre-btn genre-scifi">
+            <div class="genre-icon">🚀</div>
+            <div class="genre-name">Science Fiction</div>
+            <div class="genre-count">267 boeken</div>
+        </a>
+        <a href="{{ path('genre_page', { name: 'mystery'|lower }) }}" class="genre-btn genre-mystery">
+            <div class="genre-icon">🔍</div>
+            <div class="genre-name">Mystery</div>
+            <div class="genre-count">156 boeken</div>
+        </a>
+        <a href="{{ path('genre_page', { name: 'historical fiction'|lower }) }}" class="genre-btn genre-historical">
+            <div class="genre-icon">📚</div>
+            <div class="genre-name">Historical</div>
+            <div class="genre-count">198 boeken</div>
+        </a>
+        <a href="{{ path('genre_page', { name: 'horror'|lower }) }}" class="genre-btn genre-horror">
+            <div class="genre-icon">👻</div>
+            <div class="genre-name">Horror</div>
+            <div class="genre-count">145 boeken</div>
+        </a>
+        <a href="{{ path('genre_page', { name: 'adventure'|lower }) }}" class="genre-btn genre-adventure">
+            <div class="genre-icon">🗺️</div>
+            <div class="genre-name">Adventure</div>
+            <div class="genre-count">203 boeken</div>
+        </a>
     </div>
 </div>
 
@@ -66,12 +125,93 @@
     <h2>Bookfinder</h2>
     <p>Alles wat je nodig hebt voor je leeservaring</p>
 
+    <div class="feature-blocks">
+        <div class="feature-block">
+            {% block plattegrond %}
+            <a href="{{ path('navigatie') }}" class="plattegrond-btn">🗺️</a>
+            <h3> Plattegrond en navigatie </h3>
+            <p> Vind precies waar je boek staat met <br>
+            gedetailleerde plattegronden en navigatie- <br>
+            instructies. </p>
+            {% endblock %}
+        </div>
+
+        <div class="feature-block">
+            {% block Recencies %}
+            <button class="recencies-btn">⭐</button>
+            <h3> Recencies en Ratings </h3>
+            <p> Lees wat anderen vinden en deel je eigen <br>
+            ervaring na het lezen van een boek. </p>
+            {% endblock %}
+        </div>
+
+        <div class="feature-block">
+            {% block Statistieken %}
+            <button class="statistieken-btn">📈</button>
+            <h3> Persoonlijke statiestieken </h3>
+            <p> Houd bij hoeveel je leest, ontdek je favoriete <br>
+            genres en krijg inzichten in je leesgedrag. </p>
+            {% endblock %}
+        </div>
+    </div>
+
 </div>
 
 <div class="box box6">
+    <h2> Begin vandaag met lezen </h2>
+    <p> Maak een gratis account aanen krijg toegang tot duizenden boeken, <br>
+    persoonlijke aanbevelingen en meer. </p>
+    
     {% block register %}
-    <button class="register-btn">Gratis account aanmaken</button>
+    <button class="register-btn">👤 Gratis account aanmaken</button>
     {% endblock %}
+
+    {% block informatie %}
+    <button class="info-btn">Meer informatie</button>
+    {% endblock %}
+
+</div>
+
+<div class="box box7">
+    <div class="box7-content">
+        <div class="box7-info">
+            <h4>📖 Bookfinder</h4>
+            <p>Vind, leen en recenseer je favoriete <br>
+            boeken op 1 plek.</p>
+        </div>
+        
+        <div class="footer-lists">
+            <div class="footer-section">
+                <p><strong>Verkennen</strong></p>
+                <ul>
+                    <li>Alle Boeken</li>
+                    <li>Genres</li>
+                    <li>Populaire boeken</li>
+                    <li>Nieuwe releases</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <p><strong>Account</strong></p>
+                <ul>
+                    <li>Inloggen</li>
+                    <li>Registreren</li>
+                    <li>Mijn Boeken</li>
+                    <li>Statistieken</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <p><strong>Contact</strong></p>
+                <ul>
+                    <li>Help centre</li>
+                    <li>Veelgestelde vragen</li>
+                    <li>Privacy</li>
+                    <li>Voorwaarden</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Modal for Login/Register -->
