@@ -13,7 +13,16 @@
 <input type="text" placeholder="Search..." />
 {% endblock %}
 
-
+<!-- Authentication Modal -->
+<div id="auth-modal" class="auth-modal">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-container">
+            <div id="modal-form-content" class="modal-left"></div>
+            <div id="modal-info-content" class="modal-right"></div>
+        </div>
+    </div>
+</div>
 
 {% block content %}
 {% endblock %}
