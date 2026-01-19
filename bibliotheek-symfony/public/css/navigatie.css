@@ -32,6 +32,7 @@ body {
     margin-bottom: 25px;
     border-bottom: 3px solid var(--theme-orange);
     padding-bottom: 15px;
+    
 }
 .header h2 { margin: 0; font-size: 24px; color: var(--theme-dark); }
 .header p { margin: 5px 0 0 0; color: #666; }
@@ -121,4 +122,23 @@ canvas { display: block; background: var(--blueprint-bg); cursor: default; }
 .legend-footer {
     margin-top: 30px; font-size: 12px; color: #777;
     border-top: 1px solid #ccc; padding-top: 10px;
+}
+
+.gobackbtn,ul, a{
+    text-decoration: none;
+    list-style: none ;
+    text-align:right ;
+        transition: 0.15s;
+    
+    
+}
+
+a:hover {
+    font-size: 18px;
+    border-style: none;
+
+    border-radius:8px;
+    border-style: solid;
+
+    
 }
