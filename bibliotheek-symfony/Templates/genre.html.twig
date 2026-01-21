@@ -1,9 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ genre }} - Bibliotheek{% endblock %}
+{% block title %}{{ genre.name }} - Bibliotheek{% endblock %}
 
 {% block content %}
-    <h1>{{ genre }}</h1>
-    <p>Boeken in dit genre verschijnen later.</p>
-    <a href="{{ path('homepage') }}" class="btn btn-secondary">Terug naar homepage</a>
+<div class="genre-page">
+    <div class="genre-header">
+        <div class="genre-header-content">
+            <h1>{{ genre.name }}</h1>
+            <p class="genre-description">Ontdek {{ books|length }} geweldige {{ genre.name|lower }} boeken</p>
+            <div class="genre-stats">
+                <span class="stat">
+                    <strong>{{ books|length }}</strong>
+                    <small>Boeken</small>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="genre-container">
+        {% if books|length > 0 %}
+        <div class="books-section">
+            <h2>Alle Boeken</h2>
+            <div class="books-grid">
+                {% for book in books %}
+                <div class="book-card">
+                    <div class="book-cover">
+                        <div class="book-icon">📖</div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">{{ book.title }}</h3>
+                        <p class="book-date">
+                            <span class="date-icon">📅</span>
+                            {{ book.created_at|date('d M Y') }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+        <div class="no-books">
+            <div class="no-books-icon">📚</div>
+            <h3>Geen boeken beschikbaar</h3>
+            <p>Er zijn helaas nog geen boeken in dit genre. Kom later terug!</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="genre-footer">
+        <a href="{{ path('homepage') }}" class="btn-back">← Terug naar homepage</a>
+    </div>
+</div>
 {% endblock %}

@@ -8,18 +8,89 @@
     <script src="/js/script.js"></script>
 </head>
 <body>
-{% block login %}
-<button class="login-btn">Log in</button>
-<input type="text" placeholder="Search..." />
-{% endblock %}
+<header class="main-header">
+    <div class="logo">
+        <h2 style="margin: 0; font-size: 1.4rem;">📚 Bibliotheek</h2>
+    </div>
+    <div class="search-container">
+        {% block login %}
+        <input type="text" class="search-bar" placeholder="Search..." />
+        {% endblock %}
+    </div>
+    <div class="login-container">
+        <button class="login-btn">Log in</button>
+    </div>
+</header>
 
 <!-- Authentication Modal -->
 <div id="auth-modal" class="auth-modal">
     <div class="modal-content">
         <button class="modal-close">&times;</button>
         <div class="modal-container">
-            <div id="modal-form-content" class="modal-left"></div>
-            <div id="modal-info-content" class="modal-right"></div>
+            <!-- Left Side - Login Form -->
+            <div class="modal-left">
+                <div id="login-form-container">
+                    <h2>Welkom terug!</h2>
+                    <form class="login-form">
+                        <div class="form-group">
+                            <label for="email">E-mailadres</label>
+                            <input type="email" id="email" placeholder="jouw@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Wachtwoord</label>
+                            <input type="password" id="password" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="form-submit">Inloggen</button>
+                        <div class="toggle-form">
+                            Nog geen account? <a onclick="toggleAuthForm()">Registreer nu</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="register-form-container" style="display: none;">
+                    <h2>Maak een account</h2>
+                    <form class="login-form">
+                        <div class="form-group">
+                            <label for="reg-name">Volledige naam</label>
+                            <input type="text" id="reg-name" placeholder="Jan Jansen" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-email">E-mailadres</label>
+                            <input type="email" id="reg-email" placeholder="jouw@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">Wachtwoord</label>
+                            <input type="password" id="reg-password" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="form-submit">Registreren</button>
+                        <div class="toggle-form">
+                            Al een account? <a onclick="toggleAuthForm()">Inloggen</a>
+                        </div>
+                    </form>
+                </div>
+
+                <h3>Voordelen van lid zijn:</h3>
+                <ul>
+                    <li>Ontdek aanbevelingen op maat</li>
+                    <li>Volg je favoriete auteurs</li>
+                    <li>Deel je boekrecensies</li>
+                    <li>Beheer je uitleningen</li>
+                </ul>
+            </div>
+
+            <!-- Right Side - Info -->
+            <div class="modal-right">
+                <h3>📚 Bibliotheek</h3>
+                <p>Ontdek duizenden boeken, maak je persoonlijke bibliotheek, en deel je passie voor lezen met anderen.</p>
+                <p style="margin-top: 30px; font-size: 0.95rem;">Met je Bibliotheek-account kun je:</p>
+                <ul style="list-style: none; margin-top: 15px;">
+                    <li style="margin-bottom: 12px;">✓ Boeken zoeken en lenen</li>
+                    <li style="margin-bottom: 12px;">✓ Recensies schrijven</li>
+                    <li style="margin-bottom: 12px;">✓ Aanbevelingen ontvangen</li>
+                    <li style="margin-bottom: 12px;">✓ Je leesgeschiedenis volgen</li>
+                    <li>✓ Een community van lezers ontmoeten</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

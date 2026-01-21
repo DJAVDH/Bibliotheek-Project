@@ -43,81 +43,41 @@
 </div>
 
 <div class="box box3">
-    <h2>Meest populaire boeken</h2>
+    <div style="margin-bottom: 8px;">
+        <h2 style="margin-bottom: 4px;">Populaire boeken deze week</h2>
+        <p style="margin: 0; color: var(--muted); font-size: 0.95rem;">Découvrez les favoris de notre communauté</p>
+    </div>
     <div class="books-container">
-        <div class="book-item">
-            <img src="/images/placeholder-book.jpg" alt="Boek 1" class="book-cover">
-            <h4>Boek Titel 1</h4>
-            <p class="book-author">Auteur Naam</p>
-            <div class="book-info">
-                <div class="book-rating">⭐⭐⭐⭐⭐ (4.5)</div>
-                <span class="book-availability">Beschikbaar</span>
+        {% if randomBooks|length > 0 %}
+            {% for book in randomBooks %}
+            <div class="book-item">
+                <div class="book-cover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; padding: 10px; text-align: center; font-size: 0.9rem; min-height: 200px;">
+                    {{ book.title|slice(0, 25) }}
+                </div>
+                <h4>{{ book.title|slice(0, 40) }}</h4>
+                <p class="book-author">{{ book.author }}</p>
+                <div class="book-info">
+                    <div class="book-rating">⭐⭐⭐⭐⭐ ({{ random(35, 50) / 10|round(1) }})</div>
+                    <span class="book-availability">Beschikbaar</span>
+                </div>
             </div>
-        </div>
-        <div class="book-item">
-            <img src="/images/placeholder-book.jpg" alt="Boek 2" class="book-cover">
-            <h4>Boek Titel 2</h4>
-            <p class="book-author">Auteur Naam</p>
-            <div class="book-info">
-                <div class="book-rating">⭐⭐⭐⭐ (4.0)</div>
-                <span class="book-availability">Beschikbaar</span>
-            </div>
-        </div>
-        <div class="book-item">
-            <img src="/images/placeholder-book.jpg" alt="Boek 3" class="book-cover">
-            <h4>Boek Titel 3</h4>
-            <p class="book-author">Auteur Naam</p>
-            <div class="book-info">
-                <div class="book-rating">⭐⭐⭐⭐⭐ (4.8)</div>
-                <span class="book-availability">Beschikbaar</span>
-            </div>
-        </div>
+            {% endfor %}
+        {% else %}
+            <p style="grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 40px 0;">Geen boeken beschikbaar op dit moment.</p>
+        {% endif %}
     </div>
 </div>
 
 <div class="box box4">
     <h2>Genres</h2>
     <div class="genres">
-        <a href="{{ path('genre_page', { name: 'fantasy'|lower }) }}" class="genre-btn genre-fantasy">
-            <div class="genre-icon">🐉</div>
-            <div class="genre-name">Fantasy</div>
-            <div class="genre-count">234 boeken</div>
-        </a>
-        <a href="{{ path('genre_page', { name: 'thriller'|lower }) }}" class="genre-btn genre-thriller">
-            <div class="genre-icon">🔪</div>
-            <div class="genre-name">Thriller</div>
-            <div class="genre-count">189 boeken</div>
-        </a>
-        <a href="{{ path('genre_page', { name: 'romance'|lower }) }}" class="genre-btn genre-romance">
-            <div class="genre-icon">💕</div>
-            <div class="genre-name">Romance</div>
-            <div class="genre-count">312 boeken</div>
-        </a>
-        <a href="{{ path('genre_page', { name: 'science fiction'|lower }) }}" class="genre-btn genre-scifi">
-            <div class="genre-icon">🚀</div>
-            <div class="genre-name">Science Fiction</div>
-            <div class="genre-count">267 boeken</div>
-        </a>
-        <a href="{{ path('genre_page', { name: 'mystery'|lower }) }}" class="genre-btn genre-mystery">
-            <div class="genre-icon">🔍</div>
-            <div class="genre-name">Mystery</div>
-            <div class="genre-count">156 boeken</div>
-        </a>
-        <a href="{{ path('genre_page', { name: 'historical fiction'|lower }) }}" class="genre-btn genre-historical">
+        {% for genre in genres %}
+        <a href="{{ path('genre_page', { id: genre['id'] }) }}" class="genre-btn">
             <div class="genre-icon">📚</div>
-            <div class="genre-name">Historical</div>
-            <div class="genre-count">198 boeken</div>
+            <div class="genre-name">{{ genre['name'] }}</div>
+            <div class="genre-count">Boeken beschikbaar</div>
         </a>
-        <a href="{{ path('genre_page', { name: 'horror'|lower }) }}" class="genre-btn genre-horror">
-            <div class="genre-icon">👻</div>
-            <div class="genre-name">Horror</div>
-            <div class="genre-count">145 boeken</div>
-        </a>
-        <a href="{{ path('genre_page', { name: 'adventure'|lower }) }}" class="genre-btn genre-adventure">
-            <div class="genre-icon">🗺️</div>
-            <div class="genre-name">Adventure</div>
-            <div class="genre-count">203 boeken</div>
-        </a>
+        {% endfor %}
     </div>
 </div>
 
@@ -235,20 +195,6 @@
     </div>
 </div>
 
-{% endblock %}
-
-{% block login %}
-<header class="main-header">
-    <div class="logo">
-        <img src="/images/zoetermeer-logo.png" alt="Zoetermeer Logo">
-    </div>
-    <div class="search-container">
-        <input type="text" placeholder="🔍 Search..." class="search-bar" />
-    </div>
-    <div class="login-container">
-        <button class="login-btn">Log in</button>
-    </div>
-</header>
 {% endblock %}
 
 {% block footer %}
